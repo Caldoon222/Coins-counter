@@ -3,6 +3,7 @@
 Simple to use coin counter program that i made.
 
 How to use:
+
 1.Download opencv,open projects settings and edit yours: 
 
 VC++ Directories
