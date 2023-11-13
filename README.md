@@ -16,7 +16,7 @@ VC++ Directories
     
 ![settings2](https://github.com/Caldoon222/Coins-counter-Opencv-Cpp/assets/150370026/65f4d3ed-1ffc-43f2-a64b-6278cbb11c1f)
 
-Linker Input 
+Linker 
 
     1.3 Linker input: opencv_world(your version here)d.lib
     
