@@ -74,7 +74,7 @@ void CoinDetectionWebCam()
 void CoinDetectionImage()
 {
 	std::string path;
-	std::cout << "Enter file name(whith file format(.jpg .png): ";
+	std::cout << "Enter file path(whith file name and format(.jpg .png): ";
 	std::cin >> path;
 
 
@@ -97,7 +97,7 @@ void CoinDetectionImage()
 
 
 
-	std::cout << "\n\nwhat is the distance between coins \n==========================\nEnter number: \n" << "alot - 16 \n" << "normal - 8\n" << "little - 2 \n==========================\n" << "Enter now: ";
+	std::cout << "\n\nwhat is the distance between coins \n==========================\nEnter number: \n" << "long - 16 \n" << "normal - 8\n" << "short - 2 \n==========================\n" << "Enter now: ";
 
 	int coinsdist = 0;
 	std::cin >> coinsdist;
