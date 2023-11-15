@@ -110,7 +110,10 @@ void CoinDetectionImage()
 
 	int coinsdist = 0;
 	std::cin >> coinsdist;
-
+	while (!(coinsdist >= 1 && coinsdist <= 16)) {
+		std::cout << "Please enter number 1-16\n";
+		std::cin >> coinsdist;
+	}
 
 
 	ChooseColor(b, g, r);
