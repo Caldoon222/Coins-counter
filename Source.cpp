@@ -6,7 +6,10 @@ int main()
 	int check;
 	std::cout << "Are you using Webcam(1) or Image(0) Enter number: " << '\n';
 	std::cin >> check;
-
+	while (!(check >= 0 && check <= 1)) {
+		std::cout << "Please enter number 1 or 0\n";
+		std::cin >> check;
+	}
 
 
 
