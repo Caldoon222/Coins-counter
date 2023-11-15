@@ -8,9 +8,7 @@ int ChooseColor(int& b, int& g, int& r) {
 	std::cout << "COLOR CHECK\n1 - BLUE\n2 - RED\n3 - GREEN\n4 - YELLOW\n5 - PURPLE\nEnter now: ";
 	int colorcheck;
 	std::cin >> colorcheck;
-
-
-	if (!(colorcheck >= 1 && colorcheck <= 5)) {
+	while (!(colorcheck >= 1 && colorcheck <= 5)) {
 		std::cout << "Please enter number 1-5\n";
 		std::cin >> colorcheck;
 	}
