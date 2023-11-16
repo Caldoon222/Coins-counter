@@ -38,16 +38,15 @@ void CoinDetectionWebCam()
 			cap.read(image);
 
 
-
-			cv::Mat gray, blur, canny;
+			cv::Mat gray;
 			cvtColor(image, gray, cv::COLOR_BGR2GRAY);
-			cv::GaussianBlur(gray, blur, cv::Size(3, 3), 3, 0);
-			cv::Canny(blur, canny, 10, 200);
+			cv::medianBlur(gray, gray, 5);
+
 
 
 
 			std::vector<cv::Vec3f> circles;
-			HoughCircles(canny, circles, cv::HOUGH_GRADIENT, 1, canny.rows / 8, 100, 30, 10, 200);
+			HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows / 8, 100, 30, 10, 200);
 																				// 2 last par min_radius & max_radius 
 
 			if (!circles.empty()) {
@@ -67,8 +66,7 @@ void CoinDetectionWebCam()
 
 			putText(image, "Total Money: " + std::to_string(TotalMoney), cv::Point(1, 100), cv::FONT_HERSHEY_PLAIN, 2, 10, 4);
 			imshow("circles", image);
-
-
+			
 			cv::waitKey(30);
 		}
 }
@@ -82,10 +80,14 @@ void CoinDetectionWebCam()
 void CoinDetectionImage()
 {
 	std::string path;
-	std::cout << "Enter file path(whith file name and format(.jpg / .png): ";
+	std::cout << "Enter file path(whith file name and format(.jpg .png): ";
 	std::cin >> path;
 
 	cv::Mat image = cv::imread(path);
+
+
+
+
 
 	if (image.empty())  // if no image exit program
 	{
@@ -95,9 +97,9 @@ void CoinDetectionImage()
 
 			<< "======================================== \n"
 			"Please check the file name or path and try again\n"
-			<< "========================================\n\n\n" <<"Enter path name again:";
-		std::cin >> path;
-		cv::Mat image = cv::imread(path);
+			<< "========================================\n";
+		system("pause");
+		exit(0);
 	}
 
 
@@ -112,10 +114,7 @@ void CoinDetectionImage()
 	}
 
 
-
 	ChooseColor(b, g, r);
-
-
 
 
 	while (true) {
@@ -124,13 +123,9 @@ void CoinDetectionImage()
 		cv::Mat image = cv::imread(path);
 		//load image
 
-
-
-		cv::Mat gray, blur, canny;
+		cv::Mat gray;
 		cvtColor(image, gray, cv::COLOR_BGR2GRAY);
-		cv::GaussianBlur(gray, blur, cv::Size(3, 3), 3, 0);
-		cv::Canny(blur, canny, 10, 200);
-
+		cv::medianBlur(gray, gray, 5);
 
 
 		std::vector<cv::Vec3f> circles;
@@ -159,6 +154,7 @@ void CoinDetectionImage()
 		cv::namedWindow("circles", cv::WINDOW_NORMAL);
 		imshow("circles", image);
 
+		
 		cv::waitKey(0);	
 	}
 }
