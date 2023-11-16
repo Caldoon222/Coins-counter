@@ -38,12 +38,11 @@ void CoinDetectionWebCam()
 			cap.read(image);
 
 
+
 			cv::Mat gray, blur, canny;
-		;
 			cvtColor(image, gray, cv::COLOR_BGR2GRAY);
 			cv::GaussianBlur(gray, blur, cv::Size(3, 3), 3, 0);
 			cv::Canny(blur, canny, 10, 200);
-
 
 
 
@@ -125,12 +124,13 @@ void CoinDetectionImage()
 		cv::Mat image = cv::imread(path);
 		//load image
 
-		cv::Mat gray;
-		cv::Mat blur;
-		cv::Mat canny;
+
+
+		cv::Mat gray, blur, canny;
 		cvtColor(image, gray, cv::COLOR_BGR2GRAY);
 		cv::GaussianBlur(gray, blur, cv::Size(3, 3), 3, 0);
-		cv::Canny(blur, canny, 100, 150);
+		cv::Canny(blur, canny, 10, 200);
+
 
 
 		std::vector<cv::Vec3f> circles;
