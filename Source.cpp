@@ -4,7 +4,7 @@
 int main()
 {
 	int check;
-	std::cout << "Are you using Webcam(1) or Image(0) Enter number: " << '\n';
+	std::cout << "Are you using Webcam(1) or Image(0) Enter number: ";
 	std::cin >> check;
 	while (!(check >= 0 && check <= 1)) {
 		std::cout << "Please enter number 1 or 0\n";
@@ -12,7 +12,7 @@ int main()
 	}
 
 
-
+	std::cout << '\n';
 	switch (check)
 	{
 	 case(1):
