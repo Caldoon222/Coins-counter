@@ -3,7 +3,7 @@
 Simple to use coin counter program that i made.
 You can use your Webcam or Pictures.
 
-How to use:
+# How to use/ Installation:
 
 1. Download opencv, open projects settings and edit yours: 
 ![settings1](https://github.com/Caldoon222/Coins-counter-Opencv-Cpp/assets/150370026/dedbe61f-979d-436f-9608-151ba5d75fdd)
@@ -24,6 +24,10 @@ Linker
        
 ![settings3](https://github.com/Caldoon222/Coins-counter-Opencv-Cpp/assets/150370026/90134816-083d-4285-a4a0-56024e971e29)
 
-2. Debug or build project and follow instructions.
+# Launch
+
+1. Debug or build project and follow instructions.
 
 ![settings4](https://github.com/Caldoon222/Coins-counter-Opencv-Cpp/assets/150370026/d76774fa-3c00-4fb6-9d8a-39ac2eecfed4)
+
+
